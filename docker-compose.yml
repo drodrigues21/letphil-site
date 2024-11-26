@@ -13,8 +13,18 @@ services:
     volumes:
       - ./.env:/app/.env
 
-networks:
-  internal:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "4173:4173"
+    depends_on:
+      - vite-app
+    networks:
+      - app-network
 
-volumes:
-  data:
+networks:
+  app-network:
+    driver: bridge
