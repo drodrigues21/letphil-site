@@ -1,13 +1,23 @@
 FROM node:20
 
+# Create and set the working directory
 RUN mkdir /app
-
-COPY . ./app
-
 WORKDIR /app
 
+# Copy the package.json and package-lock.json (if present) for optimized caching
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
+# Copy the rest of your application files
+COPY . .
+
+# Build your application (if applicable)
 RUN npm run build
 
-CMD npm run preview -- --host --no-open
+# Expose the port the app will run on
+EXPOSE 4173
+
+# Start the application
+CMD ["npm", "run", "preview", "--", "--host", "--no-open"]
