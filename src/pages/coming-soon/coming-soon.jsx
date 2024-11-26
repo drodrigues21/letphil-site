@@ -111,13 +111,15 @@ export default function ComingSoon() {
 					<div className="bg-layout">
 						<div className="middle">
 							<div className="content">
-								<h1 className="letphil-logo">
-									<span className="curly">&#123;</span>
-									<span className="letphil">
-										let <span className="phil">phil</span>
-									</span>
-									<span className="curly">&#125;</span>
-								</h1>
+								<a href="/">
+									<h1 className="letphil-logo">
+										<span className="curly">&#123;</span>
+										<span className="letphil">
+											let <span className="phil">phil</span>
+										</span>
+										<span className="curly">&#125;</span>
+									</h1>
+								</a>
 								<h2 className="coming-soon">COMING SOON</h2>
 								<Timer />
 								<p>

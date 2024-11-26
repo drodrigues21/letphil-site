@@ -29,11 +29,11 @@ export default function Navbar() {
 							<a href="#testimonials">Testimonials</a>
 						</li>
 						<li>
-							<a>Start Free</a>
+							<a href="/coming-soon">Start Free</a>
 						</li>
 					</ul>
 				</div>
-				<a className="btn btn-ghost text-xl">
+				<a href="/" className="btn btn-ghost text-xl">
 					<h2 className="letphil-logo" id="letphil-logo-header">
 						<span className="curly">&#123;</span>
 						<span className="letphil">
@@ -49,7 +49,7 @@ export default function Navbar() {
 						<a href="#testimonials">Testimonials</a>
 					</li>
 					<li>
-						<a>Start Free</a>
+						<a href="/coming-soon">Start Free</a>
 					</li>
 				</ul>
 			</div>
