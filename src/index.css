@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Hero title section */
+
+.max-w-md {
+	max-width: 50em;
+}
+
+.hero-content {
+	max-width: 40em;
+}
+
+#letphil-logo-hero {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+#letphil-logo-hero .welcome-hero {
+	font-weight: 400;
+	font-size: 3rem;
+	margin-right: 1rem;
+}
+
+#letphil-logo-hero .curly {
+	font-family: "Fira Code", monospace;
+	font-size: 70px;
+	font-weight: 300;
+}
+
+#letphil-logo-hero .letphil {
+	font-family: "Fira Code", monospace;
+	display: inline-block;
+	width: 120px;
+	font-size: 46px;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 52px;
+	color: rgb(2, 113, 173);
+}
+
+#letphil-logo-hero .letphil .phil {
+	color: rgb(90, 206, 194);
+}
+/* Set height to 100% for body and html to enable the background image to cover the whole page: */
+body,
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.bgimg {
+	/* Background image */
+	background-image: url("../images/bg-coming-soon.jpeg");
+	/* Full-screen */
+	min-height: 100vh;
+	height: 100%;
+	/* Center the background image */
+	background-position: center;
+	/* Scale and zoom in the image */
+	background-size: cover;
+	/* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+	position: relative;
+	/* Add a white text color to all elements inside the .bgimg container */
+	color: white;
+	/* Add a font */
+	/* Set the font-size to 25 pixels */
+	font-size: 25px;
+	width: 100%;
+}
+
+/* Position text in the top-left corner */
+.topleft {
+	position: absolute;
+	top: 0;
+	left: 16px;
+}
+
+/* Position text in the bottom-left corner */
+.bottomleft {
+	position: absolute;
+	bottom: 0;
+	left: 16px;
+}
+
+/* Position text in the middle */
+.middle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 100%;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+/* Style the <hr> element */
+hr {
+	margin: auto;
+	width: 40%;
+}
+
+.bg-layout {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	display: block;
+	min-height: 100vh;
+	height: 100%;
+}
+
+.letphil-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: "Fira Code", monospace;
+}
+
+.letphil-logo .curly {
+	font-size: 100px;
+	font-weight: 300;
+}
+
+.letphil-logo .letphil {
+	display: inline-block;
+	width: 150px;
+	font-size: 62px;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 60px;
+	color: rgb(2, 113, 173);
+}
+
+.letphil-logo .letphil .phil {
+	color: rgb(90, 206, 194);
+}
+
+.coming-soon {
+	color: #ddd;
+	font-size: 48px;
+	margin: 20px 0;
+}
+
+.brand-logo {
+	width: 160px;
+	border-radius: 10px;
+
+	border: 2px solid red;
+}
+
+.social_icon_wrapper {
+	margin-top: 1%;
+}
+
+.social_icon {
+	padding-right: 15px;
+	font-size: 18px;
+}
+
+.social_icon:hover {
+	cursor: pointer;
+}
+
+.fa-facebook-f:hover {
+	color: #3b5998;
+}
+
+.fa-twitter:hover {
+	color: #1da1f2;
+}
+
+.fa-linkedin-in:hover {
+	color: #0077b5;
+}
+
+.fa-instagram:hover {
+	color: #e4405f;
+}
+
+@media screen and (min-width: 400px) {
+	.brand-logo {
+		width: 200px;
+	}
+}
+.services {
+	margin-top: 20px;
+}
+.services span {
+	text-transform: uppercase;
+}
+.c-wrap {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	background: #dadada;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	top: 220px;
+}
+.content {
+	width: 100%;
+}
+.content input,
+.emails {
+	height: 36px;
+	border-radius: 40px;
+	outline: none;
+	border: 0;
+	background: #efefef;
+	text-align: center;
+	width: 100%;
+	max-width: 400px;
+	display: block;
+	margin: 0 auto;
+	font-size: 14px;
+}
+.button,
+.buttons {
+	cursor: pointer;
+	background-color: #333; /* Green */
+	border: none;
+	color: white;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	display: inline;
+	font-size: 16px;
+	margin: 10px 0;
+	border-radius: 40px;
+	outline: none;
+	border: 0;
+	width: 170px;
+	border: 1px solid transparent;
+}
+.button:active,
+.button:focus {
+	border: 1px solid #fff;
+}
+.button-social {
+	/* background: transparent; */
+	/* border: none; */
+	padding: 0 8px;
+	transition: all ease-in-out 0.2s;
+	cursor: pointer;
+	position: relative;
+	top: 0;
+}
+.button-social:hover {
+	position: relative;
+	top: -2px;
+	opacity: 0.8;
+}
+.content p {
+	font-size: 14px;
+}
+.button:hover {
+	opacity: 0.9;
+}
+
+/* styles for Countdown timer */
+.Countdown {
+	margin: 10px auto;
+	padding-bottom: 20px;
+}
+
+.Countdown-col {
+	display: inline-block;
+}
+
+.Countdown-col-element {
+	display: inline-block;
+	margin: 0 15px;
+	display: flex;
+	flex-direction: column;
+}
+
+.Countdown-col-element strong {
+	font-size: 50px;
+}
+
+/* small smart phones */
+@media screen and (max-width: 600px) {
+	.letphil-logo {
+		margin-top: 0px;
+		margin-bottom: 30px;
+	}
+
+	.letphil-logo .curly {
+		font-size: 80px;
+	}
+
+	.letphil-logo .letphil {
+		width: 140px;
+		font-size: 58px;
+		line-height: 58px;
+	}
+
+	.coming-soon {
+		font-size: 40px;
+	}
+
+	.Countdown-col-element span {
+		font-size: 20px;
+	}
+
+	.Countdown-col-element strong {
+		font-size: 30px;
+	}
+}

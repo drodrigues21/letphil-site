@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - 4173:4173
+
+    networks:
+      - internal
+
+    volumes:
+      - ./.env:/app/.env
+
+networks:
+  internal:
+
+volumes:
+  data:
