@@ -5,8 +5,9 @@
 		{ "path": "./tsconfig.node.json" }
 	],
 	"compilerOptions": {
-		"jsx": "react", // or "react-jsx" for React 17+
+		"jsx": "react-jsx",
 		"moduleResolution": "node",
-		"target": "esnext"
+		"target": "esnext",
+		"allowJs": true
 	}
 }
