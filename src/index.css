@@ -9,9 +9,9 @@ html {
 
 /* Hero title section */
 
-.max-w-md {
+/* .max-w-md {
 	max-width: 50em;
-}
+} */
 
 .hero-content {
 	max-width: 40em;
@@ -293,18 +293,17 @@ hr {
 /* small smart phones */
 @media screen and (max-width: 600px) {
 	.letphil-logo {
-		margin-top: 0px;
-		margin-bottom: 30px;
+		margin: 0;
 	}
 
-	.letphil-logo .curly {
-		font-size: 80px;
+	#letphil-logo-hero .curly {
+		font-size: 36px;
 	}
 
-	.letphil-logo .letphil {
-		width: 140px;
-		font-size: 58px;
-		line-height: 58px;
+	#letphil-logo-hero .letphil {
+		width: 80px;
+		font-size: 28px;
+		line-height: 28px;
 	}
 
 	.coming-soon {

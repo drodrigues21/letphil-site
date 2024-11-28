@@ -8,9 +8,9 @@ export default function Hero({ title, description, buttonText }) {
 			<div className="hero bg-base-200 min-h-screen">
 				<div className="hero-content text-center">
 					<div className="max-w-md">
-						<h1 id="letphil-logo" className="text-5xl font-bold">
+						<div id="letphil-logo" className="text-5xl font-bold">
 							{title}
-						</h1>
+						</div>
 						<p className="py-6">{description}</p>
 						<button
 							className="btn btn-primary"
