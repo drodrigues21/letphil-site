@@ -65,7 +65,7 @@
 	height: 40px;
 	border-radius: 50%;
 	cursor: pointer;
-	color: white;
+	color: #ffffff;
 	font-size: 20px;
 	z-index: 10;
 }
@@ -118,7 +118,7 @@
 
 @media (max-width: 768px) {
 	.carousel-card {
-		width: 300px;
+		width: 290px;
 	}
 
 	.carousel-card img {
@@ -126,5 +126,9 @@
 		height: 80px;
 		position: absolute;
 		top: -40px;
+	}
+
+	.carousel-button {
+		display: none;
 	}
 }

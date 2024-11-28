@@ -16,9 +16,9 @@
 
 @media screen and (max-width: 600px) {
 	.footer {
-		/* display: flex;
+		display: flex;
 		justify-content: space-between;
-		align-items: center; */
+		align-items: center;
 	}
 
 	#letphil-logo-footer {

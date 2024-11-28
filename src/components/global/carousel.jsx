@@ -5,6 +5,10 @@ import "./carousel.css";
 const Carousel = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
+	// Adding state variables for the carousel buttons
+	const [touchStart, setTouchStart] = useState(0);
+	const [touchEnd, setTouchEnd] = useState(0);
+
 	const handleNext = () => {
 		setCurrentIndex((prevIndex) =>
 			prevIndex === testimonialData.length - 1 ? 0 : prevIndex + 1
@@ -15,6 +19,33 @@ const Carousel = () => {
 		setCurrentIndex((prevIndex) =>
 			prevIndex === 0 ? testimonialData.length - 1 : prevIndex - 1
 		);
+	};
+
+	// Adding touch event handlers for the carousel
+	const handleTouchStart = (e) => {
+		setTouchStart(e.touches[0].clientX);
+	};
+
+	const handleTouchMove = (e) => {
+		setTouchEnd(e.touches[0].clientX);
+	};
+
+	const handleTouchEnd = () => {
+		if (!touchStart || !touchEnd) return;
+
+		const distance = touchStart - touchEnd;
+		const isLeftSwipe = distance > 50;
+		const isRightSwipe = distance < -50;
+
+		if (isLeftSwipe) {
+			handleNext();
+		} else if (isRightSwipe) {
+			handlePrev();
+		}
+
+		// Reset values
+		setTouchStart(0);
+		setTouchEnd(0);
 	};
 
 	const getCardPosition = (index) => {
@@ -37,7 +68,13 @@ const Carousel = () => {
 	};
 
 	return (
-		<div id="testimonials" className="carousel-container">
+		<div
+			id="testimonials"
+			className="carousel-container"
+			onTouchStart={handleTouchStart}
+			onTouchMove={handleTouchMove}
+			onTouchEnd={handleTouchEnd}
+		>
 			<div className="carousel">
 				{testimonialData.map((testimonial, index) => {
 					const position = getCardPosition(index);
