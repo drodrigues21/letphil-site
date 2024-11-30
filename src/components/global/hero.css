@@ -6,13 +6,18 @@
   width: 100%;
   max-width: 1200px;
   padding: 16px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
+/* larger screens  */
 @media (min-width: 1024px) {
   .hero-container {
     flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
   }
 
   .video-description .iframe {
@@ -27,6 +32,7 @@
 
 .hero-description {
   padding-left: 10px;
+  margin-bottom: 20px;
 }
 
 .hero-description h1 {
