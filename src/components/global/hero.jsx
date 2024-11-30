@@ -1,47 +1,36 @@
 import { useRef } from "react";
+import "./hero.css";
 
 export default function Hero({ title, description, buttonText }) {
   const heroModalRef = useRef(null);
 
   return (
     <>
-      {/* test */}
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 id="letphil-logo" className="text-5xl font-bold">
-              {title}
-            </h1>
-            <p className="py-6">{description}</p>
-            <button
-              className="btn btn-primary"
-              onClick={() => {
-                heroModalRef.current?.showModal();
-              }}
-            >
-              {buttonText}
-            </button>
+      <div className="min-h-screen bg-slate-50 justify-center items-center flex">
+        <div className="hero-container">
+          <div className="hero-description">
+            <h1>Welcome to the LetPhil Community</h1>
+            <p>
+              Connect with passionate programmers, learn together, and build a
+              brighter coding future!
+            </p>
+            <button>Join Now</button>
+          </div>
+
+          <div className="video-description">
+            <iframe
+              width="550"
+              height="315"
+              src="https://www.youtube.com/embed/z7Ggq5Mzcvw?si=FFwJeEF4XD4ekWD3"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </div>
-      <dialog
-        id="hero-modal"
-        className="modal modal-bottom sm:modal-middle"
-        ref={heroModalRef}
-      >
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">
-            Press ESC key or click the button below to close
-          </p>
-          <div className="modal-action">
-            <form method="dialog">
-              {/* If there is a button in the form, it will close the modal */}
-              <button className="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
     </>
   );
 }
