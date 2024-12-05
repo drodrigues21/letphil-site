@@ -1,4 +1,5 @@
 import { Carousel, Hero } from "../components/global";
+import Newsletter from "../components/newsletter";
 import "./landing-page.css";
 
 // Images
@@ -11,20 +12,8 @@ import eventsImage from "../assets/events.jpeg";
 export default function Playground() {
 	return (
 		<div>
-			<Hero
-				title={
-					<h1 className="letphil-logo" id="letphil-logo-hero">
-						<span className="welcome-hero">Welcome to</span>
-						<span className="curly">&#123;</span>
-						<span className="letphil">
-							let <span className="phil">phil</span>
-						</span>
-						<span className="curly">&#125;</span>
-					</h1>
-				}
-				description="Coding Saves Lives"
-				buttonText="Click Here"
-			/>
+			<Hero />
+			<Newsletter />
 			<Carousel />
 			{/* Featured Projects Header */}
 			<div className="flex flex-col items-center justify-center featured-header">

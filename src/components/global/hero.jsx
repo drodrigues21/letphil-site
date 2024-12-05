@@ -1,46 +1,86 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import "./hero.css";
 
 export default function Hero({ title, description, buttonText }) {
 	const heroModalRef = useRef(null);
 
+	const [timeLeft, setTimeLeft] = useState({
+		days: 0,
+		hours: 0,
+		minutes: 0,
+		seconds: 0,
+	});
+
+	useEffect(() => {
+		const targetDate = new Date("2025-04-05T00:00:00");
+
+		const timer = setInterval(() => {
+			const now = new Date();
+			const difference = targetDate - now;
+
+			const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+			const hours = Math.floor(
+				(difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+			);
+			const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+			const paddedTime = {
+				days: days < 10 ? `0${days}` : days,
+				hours: hours < 10 ? `0${hours}` : hours,
+				minutes: minutes < 10 ? `0${minutes}` : minutes,
+				seconds: seconds < 10 ? `0${seconds}` : seconds,
+			};
+
+			setTimeLeft(paddedTime);
+
+			if (difference < 0) {
+				clearInterval(timer);
+				setTimeLeft({ days: "00", hours: "00", minutes: "00", seconds: "00" });
+			}
+		}, 1000);
+
+		return () => clearInterval(timer);
+	}, []);
+
 	return (
 		<>
-			<div className="hero bg-base-200 min-h-screen">
-				<div className="hero-content text-center">
-					<div className="max-w-md">
-						<div id="letphil-logo" className="text-5xl font-bold">
-							{title}
-						</div>
-						<p className="py-6">{description}</p>
-						<button
-							className="btn btn-primary"
-							onClick={() => {
-								heroModalRef.current?.showModal();
-							}}
-						>
-							{buttonText}
-						</button>
+			<div className="countdown-container">
+				<div className="countdown-wrapper">
+					<h2 className="countdown-title">Countdown to our course launch</h2>
+					<div className="countdown-item">
+						<span className="days">{timeLeft.days}</span>
+						<span className="hours">{timeLeft.hours}</span>
+						<span className="minutes">{timeLeft.minutes}</span>
+						<span className="seconds">{timeLeft.seconds}</span>
 					</div>
 				</div>
 			</div>
-			<dialog
-				id="hero-modal"
-				className="modal modal-bottom sm:modal-middle"
-				ref={heroModalRef}
-			>
-				<div className="modal-box">
-					<h3 className="font-bold text-lg">Hello!</h3>
-					<p className="py-4">
-						Press ESC key or click the button below to close
-					</p>
-					<div className="modal-action">
-						<form method="dialog">
-							{/* If there is a button in the form, it will close the modal */}
-							<button className="btn">Close</button>
-						</form>
+			<div className="min-h-[82vh] bg-[#f0f4f8] justify-center items-center flex">
+				<div className="hero-container">
+					<div className="hero-description">
+						<h1>LetPhil Community</h1>
+						<p>
+							Connect with passionate programmers, learn together, and build a
+							brighter coding future!
+						</p>
+						<button className="cta-button">Join Now</button>
+					</div>
+
+					<div className="video-description">
+						<iframe
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/ZT9F81rdnT4?si=EaPbpAhAbsFcTlbC"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen
+						></iframe>
 					</div>
 				</div>
-			</dialog>
+			</div>
 		</>
 	);
 }

@@ -46,15 +46,40 @@ export default function Navbar() {
 			<div className="navbar-center hidden lg:flex">
 				<ul className="menu menu-horizontal px-1">
 					<li>
-						<a href="#testimonials">Testimonials</a>
+						<a className="link glow-effect" href="#testimonials">
+							Testimonials
+							<svg className="glow-effect-svg">
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-blur"
+								/>
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-line"
+								/>
+							</svg>
+						</a>
 					</li>
 					<li>
-						<a href="/coming-soon">Start Free</a>
+						<a className="link glow-effect" href="#newsletter">
+							Start Free
+							<svg className="glow-effect-svg">
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-blur"
+								/>
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-line"
+								/>
+							</svg>
+						</a>
 					</li>
 				</ul>
-			</div>
-			<div className="navbar-end">
-				<a className="btn">Button</a>
 			</div>
 		</div>
 	);

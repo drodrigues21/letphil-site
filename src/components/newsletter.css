@@ -1,0 +1,64 @@
+.newsletter-container {
+	padding: 8rem;
+}
+
+.newsletter-card {
+	font-family: "Poppins", sans-serif;
+	background: linear-gradient(90deg, #5a62ce 0%, #3f459c 100%);
+	box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.newsletter-card h2,
+.newsletter-card h3 {
+	color: #fdfdfd;
+}
+
+.newsletter-card p {
+	color: #cacaca;
+}
+
+.submit-btn {
+	font-weight: 600;
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	border: none;
+}
+
+.phil-img img {
+	max-width: 100%;
+}
+
+.phil-img {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+}
+
+/* SUBMIT BTN GLOW EFFECT */
+
+.newsletter-card .glow-blur,
+.newsletter-card .glow-line {
+	stroke: #ffffff;
+	stroke-width: 5px;
+	stroke-dasharray: 20px 30px;
+}
+
+.newsletter-card .glow-blur {
+	filter: blur(10px);
+	stroke: #ffffff;
+	stroke-width: 3px;
+}
+
+.newsletter-card .glow-line {
+	stroke: #ffffff;
+	stroke-width: 2px;
+}
+
+@media screen and (max-width: 768px) {
+	.newsletter-container {
+		padding: 5rem 1rem;
+	}
+	.newsletter-card .phil-img {
+		clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+	}
+}

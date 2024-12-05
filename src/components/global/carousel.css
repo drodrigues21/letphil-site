@@ -10,7 +10,7 @@
 	position: relative;
 	width: 100%;
 	max-width: 1400px;
-	min-height: 600px;
+	min-height: 800px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -19,11 +19,11 @@
 }
 
 .carousel-card {
-	width: 400px;
+	width: 500px;
 	position: absolute;
 	background-color: #ffffff;
 	text-align: center;
-	padding: 70px 30px;
+	padding: 80px 30px;
 	border-radius: 5px;
 	transition: all 0.5s ease-in-out;
 }
@@ -84,7 +84,7 @@
 
 .carousel-dots {
 	position: absolute;
-	bottom: 55px;
+	bottom: 150px;
 
 	display: flex;
 	justify-content: center;
@@ -130,5 +130,9 @@
 
 	.carousel-button {
 		display: none;
+	}
+
+	.carousel-dots {
+		bottom: 100px;
 	}
 }

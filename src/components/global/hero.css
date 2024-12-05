@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap");
+
+/* COUNTDOWN SECTION */
+
+.countdown-container {
+	font-family: "Montserrat", sans-serif;
+	background-color: #5acec2;
+	color: #0b0b0b;
+}
+
+.countdown-wrapper {
+	max-width: 1250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	margin: 0 auto;
+}
+
+.countdown-title {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+.countdown-item {
+	display: flex;
+	justify-content: center;
+	gap: 1.15rem;
+}
+
+.countdown-item span {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.countdown-item span::after {
+	content: attr(class);
+	text-transform: uppercase;
+	font-size: 0.7rem;
+}
+
+/* END OF COUNTDOWN SECTION */
+
+.hero-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1200px;
+	padding: 2rem;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+.hero-description h1 {
+	font-size: 3.5rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	font-family: "Montserrat", sans-serif;
+	line-height: 1.2;
+	background: linear-gradient(90deg, #5a62ce 0%, #3f459c 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: fadeIn 0.8s ease-in;
+}
+
+.hero-description p {
+	font-size: 1.25rem;
+	margin-bottom: 2rem;
+	line-height: 1.6;
+	color: #4b5563;
+	font-family: "Poppins", sans-serif;
+	max-width: 600px;
+	animation: slideUp 0.6s ease-out;
+}
+
+.cta-button {
+	color: white;
+	background: linear-gradient(45deg, #5a62ce 0%, #3f459c 50%, #2d3282 100%);
+	background-size: 200% auto;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.5s ease;
+	box-shadow: 0 4px 15px rgba(90, 98, 206, 0.2);
+	margin-top: 0.5rem;
+	animation: slideUp 0.8s ease-out;
+	position: relative;
+	z-index: 1;
+	padding: 1rem 2rem;
+}
+
+.cta-button::before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: linear-gradient(45deg, #6e76e3, #3f459c, #6e76e3);
+	border-radius: 10px;
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.cta-button:hover {
+	transform: translateY(-2px);
+	background-position: right center;
+	box-shadow: 0 6px 20px rgba(90, 98, 206, 0.3);
+}
+
+.cta-button:hover::before {
+	opacity: 1;
+}
+
+/* larger screens  */
+@media (min-width: 1024px) {
+	.countdown-title {
+		font-size: 0.9rem;
+	}
+
+	.countdown-item span {
+		font-size: 1.25rem;
+	}
+
+	.hero-container {
+		flex-direction: row;
+		gap: 100px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.video-description iframe {
+		max-width: 100%;
+		border-radius: 0.9rem;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+	}
+
+	.hero-description {
+		align-items: flex-start;
+		text-align: left;
+		max-width: 45%;
+	}
+}
+
+/* mobile screens */
+@media (max-width: 1023px) {
+	.hero-container {
+		padding: 1rem;
+		margin-bottom: 5rem;
+	}
+
+	.hero-container h1 {
+		font-size: 2.5rem;
+	}
+
+	.hero-description {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin: 50px 0;
+	}
+
+	.video-description iframe {
+		max-width: 100%;
+		border-radius: 0.9rem;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+	}
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

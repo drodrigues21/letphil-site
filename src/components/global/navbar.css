@@ -1,3 +1,13 @@
+.navbar {
+	max-width: 1250px;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
+.hero-logo:hover {
+	background-color: transparent;
+}
+
 #letphil-logo-header {
 	margin-bottom: 0;
 }
@@ -10,4 +20,87 @@
 	width: 50px;
 	font-size: 20px;
 	line-height: 20px;
+}
+
+.menu {
+	gap: 2rem;
+	padding-right: 1rem;
+}
+
+.menu li a {
+	display: block;
+	font-size: 1.15rem;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 0.5rem;
+	padding: 0.5rem 1.5rem;
+	border: 0;
+}
+
+.menu li a:hover {
+	background-color: transparent;
+}
+
+.glow-effect {
+	/* BE CAREFUL WITH THIS VALUE - USE FOR CALCULATING THE SVG SIZE */
+	--container-offset: 40px;
+	position: relative;
+}
+
+.glow-effect-svg {
+	width: calc(100% + var(--container-offset));
+	height: calc(100% + var(--container-offset));
+	position: absolute;
+	inset: calc(var(--container-offset) / -2);
+	opacity: 0;
+}
+
+.glow-blur,
+.glow-line {
+	width: calc(100% - var(--container-offset));
+	height: calc(100% - var(--container-offset));
+	x: calc(var(--container-offset) / 2);
+	y: calc(var(--container-offset) / 2);
+	rx: 0.5rem;
+	fill: transparent;
+	stroke: #5acec2;
+	stroke-width: 5px;
+	stroke-dasharray: 20px 30px;
+}
+
+.glow-blur {
+	filter: blur(7px);
+	stroke: #5acec2;
+	stroke-width: 4px;
+}
+
+.glow-line {
+	stroke: #5acec2;
+	stroke-width: 2px;
+}
+
+.glow-effect:is(:hover, :focus) .glow-blur,
+.glow-effect:is(:hover, :focus) .glow-line {
+	stroke-dashoffset: -65px;
+	transition: stroke-dashoffset 1200ms ease-out;
+}
+
+.glow-effect:is(:hover, :focus-visible) .glow-effect-svg {
+	animation: glow-visibility 1200ms ease-out;
+}
+
+/* GLOW ANIMATION */
+@keyframes glow-visibility {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
