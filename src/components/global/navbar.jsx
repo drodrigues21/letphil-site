@@ -29,7 +29,7 @@ export default function Navbar() {
 							<a href="#testimonials">Testimonials</a>
 						</li>
 						<li>
-							<a href="/coming-soon">Start Free</a>
+							<a href="#newsletter">Start Free</a>
 						</li>
 					</ul>
 				</div>
