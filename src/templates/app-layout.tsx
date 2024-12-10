@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { Footer, Navbar } from "../components/global";
+import { Footer, Header } from "../components";
 
 export default function AppLayout(): JSX.Element {
 	return (
 		<div>
-			<Navbar />
+			<Header />
 			<Outlet />
 			<Footer />
 		</div>

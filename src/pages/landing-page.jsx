@@ -1,5 +1,5 @@
-import { Carousel, Hero } from "../components/global";
-import Newsletter from "../components/newsletter";
+import { Hero, Newsletter, Carousel } from "../components";
+
 import "./landing-page.css";
 
 // Images
@@ -9,7 +9,7 @@ import mentorshipImage from "../assets/mentorship.jpeg";
 import eventsImage from "../assets/events.jpeg";
 
 // Component
-export default function Playground() {
+export default function LandingPage() {
 	return (
 		<div>
 			<Hero />

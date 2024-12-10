@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { testimonialData } from "../../data/testimonialData";
+import { testimonialData } from "../data/testimonialData";
 import "./carousel.css";
 
 const Carousel = () => {

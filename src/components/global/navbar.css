@@ -63,8 +63,8 @@
 	y: calc(var(--container-offset) / 2);
 	rx: 0.5rem;
 	fill: transparent;
-	stroke: #5acec2;
-	stroke-width: 5px;
+	/* stroke: #5acec2; */
+	/* stroke-width: 5px; */
 	stroke-dasharray: 20px 30px;
 }
 

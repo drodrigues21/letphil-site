@@ -56,7 +56,7 @@ export default function Hero({ title, description, buttonText }) {
 					</div>
 				</div>
 			</div>
-			<div className="min-h-[82vh] bg-[#f0f4f8] justify-center items-center flex">
+			<div className="min-h-[88vh] bg-[#f0f4f8] justify-center items-center flex">
 				<div className="hero-container">
 					<div className="hero-description">
 						<h1>LetPhil Community</h1>

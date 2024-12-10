@@ -1,4 +1,5 @@
 .newsletter-container {
+	/* background-color: #5acec2; */
 	padding: 8rem;
 }
 
@@ -53,11 +54,31 @@
 	stroke: #ffffff;
 	stroke-width: 2px;
 }
+/* END OF SUBMIT BTN GLOW EFFECT */
+
+/* NOTIFICATION STYLING */
+.notification {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+
+.notification .notification-error p {
+	color: #f06060;
+}
+
+.notification .notification-success p {
+	color: #43cc46;
+}
+
+.notification-slide {
+	transition: all 0.3s ease-in-out;
+}
 
 @media screen and (max-width: 768px) {
 	.newsletter-container {
 		padding: 5rem 1rem;
 	}
+
 	.newsletter-card .phil-img {
 		clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
 	}
