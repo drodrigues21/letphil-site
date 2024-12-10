@@ -3,7 +3,7 @@ name: Deploy to IONOS Cloud Server
 on:
   push:
     branches:
-      - main # Change this to your default branch if different
+      - main
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18" # Specify your Node.js version
+          node-version: "18"
 
       - name: Install dependencies
         run: npm install
@@ -24,14 +24,19 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Deploy to IONOS
-        env:
-          IONOS_USER: ${{ secrets.IONOS_USER }} # Your IONOS username
-          IONOS_PASSWORD: ${{ secrets.IONOS_PASSWORD }} # Your IONOS password
-          IONOS_SERVER_IP: ${{ secrets.IONOS_SERVER_IP }} # Your IONOS server IP address
-        run: |
-          # Install SSH client if not available
-          sudo apt-get install -y openssh-client
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v1
 
-          # Copy the built files to the IONOS server
-          scp -r build/* $IONOS_USER@$IONOS_SERVER_IP:/app
+      - name: Build and push Docker image
+        run: |
+          docker build -t letphil-site_frontend .
+          echo "${{ secrets.IONOS_PASSWORD }}" | docker login letphil-site_frontend --username $IONOS_USER --password-stdin
+          docker push your-image-name
+
+      - name: Deploy to IONOS using Docker Compose
+        env:
+          IONOS_USER: ${{ secrets.IONOS_USER }} # IONOS username
+          IONOS_PASSWORD: ${{ secrets.IONOS_PASSWORD }} # IONOS password
+          IONOS_SERVER_IP: ${{ secrets.IONOS_SERVER_IP }} # IONOS server IP address
+        run: |
+          ssh $IONOS_USER@$IONOS_SERVER_IP "docker-compose pull && docker-compose up -d"
