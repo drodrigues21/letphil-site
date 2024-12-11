@@ -1,4 +1,4 @@
-name: Deploy to IONOS Cloud Server #SCREW YOU PHIL!
+name: Deploy to IONOS Cloud Server
 
 on:
   push:
