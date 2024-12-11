@@ -33,4 +33,4 @@ jobs:
           IONOS_PASSWORD: ${{ secrets.IONOS_PASSWORD }} # IONOS password
           IONOS_SERVER_IP: ${{ secrets.IONOS_SERVER_IP }} # IONOS server IP address
         run: |
-          ssh $IONOS_USER@$IONOS_SERVER_IP "docker-compose pull && docker-compose up -d"
+          ssh $IONOS_USER@$IONOS_SERVER_IP -p $IONOS_PASSWORD "docker-compose pull && docker-compose up -d"
