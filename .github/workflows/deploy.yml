@@ -31,7 +31,7 @@ jobs:
         run: |
           docker build -t letphil-site_frontend .
           echo "${{ secrets.IONOS_PASSWORD }}" | docker login letphil-site_frontend --username $IONOS_USER --password-stdin
-          docker push your-image-name
+          docker push letphil-site_frontend
 
       - name: Deploy to IONOS using Docker Compose
         env:
