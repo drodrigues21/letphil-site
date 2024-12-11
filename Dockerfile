@@ -13,12 +13,8 @@ RUN npm install
 # Copy the rest of your application files
 COPY . .
 
-# Build your application (if applicable)
-RUN npm run build
-
 # Expose the port the app will run on
 EXPOSE 4173
 
 # Start the application
 CMD ["npm", "run", "preview", "--", "--host", "--no-open"]
-
