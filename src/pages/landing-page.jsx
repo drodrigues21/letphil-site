@@ -11,7 +11,7 @@ import eventsImage from "../assets/events.jpeg";
 // Component
 export default function LandingPage() {
 	return (
-		<div>
+		<div className="landing-page-container">
 			<Hero />
 			<Newsletter />
 			<Carousel />

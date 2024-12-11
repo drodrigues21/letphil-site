@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap");
 
+:root {
+	--hero-bg-light: #f5f5f5; /* Light theme background color */
+	--hero-bg-dark: #2b3440; /* Dark theme background color */
+}
+
 /* COUNTDOWN SECTION */
 
 .countdown-container {
@@ -46,6 +51,7 @@
 
 /* END OF COUNTDOWN SECTION */
 
+/* HERO SECTION */
 .hero-container {
 	display: flex;
 	flex-direction: column;
@@ -76,7 +82,7 @@
 	font-size: 1.25rem;
 	margin-bottom: 2rem;
 	line-height: 1.6;
-	color: #4b5563;
+	/* color: #4b5563; */
 	font-family: "Poppins", sans-serif;
 	max-width: 600px;
 	animation: slideUp 0.6s ease-out;
@@ -180,5 +186,21 @@
 	to {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+/* THEME STYLES */
+
+/* Light theme styles */
+@media (prefers-color-scheme: light) {
+	.hero-section {
+		background-color: var(--hero-bg-light);
+	}
+}
+
+/* Dark theme styles */
+@media (prefers-color-scheme: dark) {
+	.hero-section {
+		background-color: var(--hero-bg-dark);
 	}
 }
