@@ -1,6 +1,39 @@
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./navbar.css";
 
 export default function Navbar() {
+	const [isStorePage, setIsStorePage] = useState(false);
+	const location = useLocation();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		setIsStorePage(location.pathname.includes("/store"));
+	}, [location]);
+
+	const handleNavClick = (e, sectionId) => {
+		e.preventDefault();
+
+		if (isStorePage) {
+			// Navigate to home page with the hash
+			navigate(`/#${sectionId}`);
+			// Wait longer for the page to fully load
+			setTimeout(() => {
+				const element = document.getElementById(sectionId);
+
+				if (element) {
+					element.scrollIntoView({ behavior: "smooth" });
+				}
+			}, 200);
+		} else {
+			const element = document.getElementById(sectionId);
+
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			}
+		}
+	};
+
 	return (
 		<div className="navbar bg-base-100">
 			<div className="navbar-start">
@@ -26,10 +59,20 @@ export default function Navbar() {
 						className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
 					>
 						<li>
-							<a href="#testimonials">Testimonials</a>
+							<a
+								href="#newsletter"
+								onClick={(e) => handleNavClick(e, "newsletter")}
+							>
+								Start Free
+							</a>
 						</li>
 						<li>
-							<a href="#newsletter">Start Free</a>
+							<a
+								href="#testimonials"
+								onClick={(e) => handleNavClick(e, "testimonials")}
+							>
+								Testimonials
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -46,7 +89,32 @@ export default function Navbar() {
 			<div className="navbar-center hidden lg:flex">
 				<ul className="menu menu-horizontal px-1">
 					<li>
-						<a className="link glow-effect" href="#testimonials">
+						<a
+							className="link glow-effect"
+							href="#newsletter"
+							onClick={(e) => handleNavClick(e, "newsletter")}
+						>
+							Start Free
+							<svg className="glow-effect-svg">
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-blur"
+								/>
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-line"
+								/>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a
+							className="link glow-effect"
+							href="#testimonials"
+							onClick={(e) => handleNavClick(e, "testimonials")}
+						>
 							Testimonials
 							<svg className="glow-effect-svg">
 								<rect
@@ -63,20 +131,12 @@ export default function Navbar() {
 						</a>
 					</li>
 					<li>
-						<a className="link glow-effect" href="#newsletter">
-							Start Free
-							<svg className="glow-effect-svg">
-								<rect
-									pathLength={100}
-									stroke-linecap="round"
-									className="glow-blur"
-								/>
-								<rect
-									pathLength={100}
-									stroke-linecap="round"
-									className="glow-line"
-								/>
-							</svg>
+						<a
+							href="https://discord.gg/SsWF6cWDRw"
+							target="_blank"
+							className="cta-button cta-button-header"
+						>
+							Join Us Now
 						</a>
 					</li>
 				</ul>

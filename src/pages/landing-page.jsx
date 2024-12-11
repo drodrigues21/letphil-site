@@ -1,4 +1,4 @@
-import { Hero, Newsletter, Carousel } from "../components";
+import { Hero, Newsletter, Carousel, Courses } from "../components";
 
 import "./landing-page.css";
 
@@ -24,7 +24,7 @@ export default function LandingPage() {
 			</div>
 			{/* first row */}
 			<div className="featured featured-reverse">
-				<div className="w-full lg:w-1/2 featured-project">
+				<div className="w-full lg:w-1/2 featured-project slide-right">
 					<h3 className="featured-project-title">1. YouTube Channel</h3>
 					<p className="featured-project-description">
 						Dive into a wealth of tutorials, tips, and content that helps you
@@ -32,13 +32,13 @@ export default function LandingPage() {
 						<a href="https://www.youtube.com/@letphil">Come check it out!</a>
 					</p>
 				</div>
-				<div className="featured-project-img">
+				<div className="featured-project-img slide-left">
 					<img src={youtubeImage} alt="letphil youtube" />
 				</div>
 			</div>
 			{/* second row */}
 			<div className="featured">
-				<div className="w-full lg:w-1/2 featured-project">
+				<div className="w-full lg:w-1/2 featured-project slide-left">
 					<h3 className="featured-project-title">2. Discord Community</h3>
 					<p className="featured-project-description">
 						Join our vibrant community of 800+ members, where you can network,
@@ -52,36 +52,37 @@ export default function LandingPage() {
 						</a>
 					</p>
 				</div>
-				<div className="featured-project-img">
+				<div className="featured-project-img slide-right">
 					<img src={discordImage} alt="letphil discord" />
 				</div>
 			</div>
 			{/* third row */}
 			<div className="featured featured-reverse">
-				<div className="w-full lg:w-1/2 featured-project">
+				<div className="w-full lg:w-1/2 featured-project slide-right">
 					<h3 className="featured-project-title">3. One-on-One Mentorship</h3>
 					<p className="featured-project-description">
 						Get personalized coaching to fast-track your growth, whether you're
 						tackling a new project or overcoming challenges.
 					</p>
 				</div>
-				<div className="featured-project-img">
+				<div className="featured-project-img slide-left">
 					<img src={mentorshipImage} alt="letphil mentorship" />
 				</div>
 			</div>
 			{/* fourth row */}
 			<div className="featured">
-				<div className="w-full lg:w-1/2 featured-project">
+				<div className="w-full lg:w-1/2 featured-project slide-left">
 					<h3 className="featured-project-title">4. Community Events</h3>
 					<p className="featured-project-description">
 						Participate in engaging events that bring the community
 						together—workshops, challenges, and more!
 					</p>
 				</div>
-				<div className="featured-project-img">
+				<div className="featured-project-img slide-right">
 					<img src={eventsImage} alt="letphil events" />
 				</div>
 			</div>
+			<Courses />
 		</div>
 	);
 }

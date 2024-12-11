@@ -1,7 +1,31 @@
+:root {
+	--header-bg-light: #fff; /* Light theme background color */
+	--header-bg-dark: #1d232a; /* Dark theme background color */
+}
+
 header {
 	position: sticky;
 	top: 0;
 	width: 100%;
-	background-color: #fff;
 	z-index: 100;
+}
+
+/* Light theme styles */
+@media (prefers-color-scheme: light) {
+	header {
+		background-color: var(--header-bg-light);
+	}
+}
+
+/* Dark theme styles */
+@media (prefers-color-scheme: dark) {
+	header {
+		background-color: var(--header-bg-dark);
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		position: relative;
+	}
 }

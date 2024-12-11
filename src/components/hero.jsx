@@ -59,12 +59,16 @@ export default function Hero({ title, description, buttonText }) {
 			<div className="min-h-[88vh] bg-[#f0f4f8] justify-center items-center flex">
 				<div className="hero-container">
 					<div className="hero-description">
-						<h1>LetPhil Community</h1>
+						<h1>LetPhil: Learn, Connect, Achieve</h1>
 						<p>
-							Connect with passionate programmers, learn together, and build a
-							brighter coding future!
+							Empowering coders and creators to reach their full potential
+							through collaboration and support.
 						</p>
-						<button className="cta-button">Join Now</button>
+						<button className="cta-button">
+							<a href="https://discord.gg/SsWF6cWDRw" target="_blank">
+								Join Us Now
+							</a>
+						</button>
 					</div>
 
 					<div className="video-description">

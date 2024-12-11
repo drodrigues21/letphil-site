@@ -1,3 +1,12 @@
+.footer {
+	max-width: 1250px;
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
 .footer aside {
 	display: flex;
 	flex-direction: column;
@@ -14,7 +23,7 @@
 	line-height: 20px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	.footer {
 		display: flex;
 		justify-content: space-between;

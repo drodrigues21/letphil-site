@@ -87,7 +87,7 @@
 	background: linear-gradient(45deg, #5a62ce 0%, #3f459c 50%, #2d3282 100%);
 	background-size: 200% auto;
 	border: none;
-	border-radius: 8px;
+	border-radius: 40px;
 	cursor: pointer;
 	transition: all 0.5s ease;
 	box-shadow: 0 4px 15px rgba(90, 98, 206, 0.2);
@@ -98,28 +98,11 @@
 	padding: 1rem 2rem;
 }
 
-.cta-button::before {
-	content: "";
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	right: -2px;
-	bottom: -2px;
-	background: linear-gradient(45deg, #6e76e3, #3f459c, #6e76e3);
-	border-radius: 10px;
-	z-index: -1;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
 .cta-button:hover {
 	transform: translateY(-2px);
 	background-position: right center;
+	/* background: linear-gradient(45deg, #6e76e3, #3f459c, #6e76e3); */
 	box-shadow: 0 6px 20px rgba(90, 98, 206, 0.3);
-}
-
-.cta-button:hover::before {
-	opacity: 1;
 }
 
 /* larger screens  */
