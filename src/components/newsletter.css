@@ -82,7 +82,7 @@
 	animation: fade-in linear forwards;
 	animation-timeline: view();
 	animation-range: entry -300px;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 
 @keyframes fade-in {
