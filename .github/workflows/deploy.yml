@@ -27,10 +27,13 @@ jobs:
       - name: Set up Docker
         uses: docker/setup-buildx-action@v1
 
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
       - name: Deploy to IONOS using Docker Compose
         env:
           IONOS_USER: ${{ secrets.IONOS_USER }} # IONOS username
           IONOS_PASSWORD: ${{ secrets.IONOS_PASSWORD }} # IONOS password
           IONOS_SERVER_IP: ${{ secrets.IONOS_SERVER_IP }} # IONOS server IP address
         run: |
-          sshpass -p $IONOS_PASSWORD ssh $IONOS_USER@$IONOS_SERVER_IP "docker-compose pull && docker-compose up -d"
+          sshpass -p $IONOS_PASSWORD ssh -o StrictHostKeyChecking=no $IONOS_USER@$IONOS_SERVER_IP "cd /app docker-compose pull && docker-compose up -d"
