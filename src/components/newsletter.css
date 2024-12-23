@@ -81,7 +81,7 @@
 	scale: 0.8;
 	animation: fade-in linear forwards;
 	animation-timeline: view();
-	animation-range: entry -300px;
+	animation-range: entry -800px;
 	/* overflow-x: hidden; */
 }
 

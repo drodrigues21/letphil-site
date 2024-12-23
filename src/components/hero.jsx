@@ -1,9 +1,7 @@
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./hero.css";
 
-export default function Hero({ title, description, buttonText }) {
-	const heroModalRef = useRef(null);
-
+export default function Hero() {
 	const [timeLeft, setTimeLeft] = useState({
 		days: 0,
 		hours: 0,
@@ -56,32 +54,27 @@ export default function Hero({ title, description, buttonText }) {
 					</div>
 				</div>
 			</div>
-			<div className="hero-section min-h-[88vh] justify-center items-center flex">
+			<div className="hero-section">
 				<div className="hero-container">
 					<div className="hero-description">
-						<h1>LetPhil: Learn, Connect, Achieve</h1>
+						<h1>Code Your Future with LetPhil</h1>
 						<p>
-							Empowering coders and creators to reach their full potential
-							through collaboration and support.
+							Master the essentials of full stack web development and build a
+							career in tech — starting today!
 						</p>
-						<button className="cta-button">
-							<a href="https://discord.gg/SsWF6cWDRw" target="_blank">
-								Join Us Now
-							</a>
-						</button>
-					</div>
-
-					<div className="video-description">
-						<iframe
-							width="560"
-							height="315"
-							src="https://www.youtube.com/embed/ZT9F81rdnT4?si=EaPbpAhAbsFcTlbC"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
-							allowfullscreen
-						></iframe>
+						<div className="video-description">
+							<iframe
+								src="https://www.youtube.com/embed/ZT9F81rdnT4?si=EaPbpAhAbsFcTlbC"
+								title="YouTube video player"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerpolicy="strict-origin-when-cross-origin"
+								allowfullscreen
+							></iframe>
+						</div>
+						<a className="cta-button" href="/store">
+							Break into Tech — Enroll Now!
+						</a>
 					</div>
 				</div>
 			</div>

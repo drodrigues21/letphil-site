@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import "./courses.css";
 import coursesImage from "../assets/course.jpeg";
 
 const Courses = () => {
 	return (
 		<section id="courses" class="courses-section">
-			<h2>Our Courses</h2>
+			<h2>Our Course</h2>
 			<div class="course-card-landing-page">
 				<div className="course-img-container">
 					<img
@@ -24,9 +23,9 @@ const Courses = () => {
 						<span class="original-price">$899.00</span>
 						<span class="discounted-price">$499.00</span>
 					</div>
-					<Link to="/store" className="cta-button cta-button-primary">
+					<a href="/store" className="cta-button cta-button-primary">
 						Enroll Now
-					</Link>
+					</a>
 				</div>
 			</div>
 		</section>

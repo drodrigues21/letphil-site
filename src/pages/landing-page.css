@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+.features-container {
+	/* overflow-x: hidden; */
+	/* border: 1px solid red; */
+}
+
 .featured-projects-header {
 	max-width: 1000px;
 	font-family: "Montserrat", serif;
@@ -97,44 +102,35 @@
 		justify-content: initial;
 		gap: 8rem;
 	}
+	/* SCROLL ANIMATIONS */
 
-	.featured-project-title {
-		font-size: 2.5rem;
+	.slide-right {
+		transform: translateX(100px);
+		opacity: 0;
+		animation: slide-right linear forwards;
+		animation-timeline: view();
+		animation-range: entry 50px;
 	}
 
-	.featured-project-description {
-		font-size: 1.5rem;
+	.slide-left {
+		transform: translateX(-100px);
+		opacity: 0;
+		animation: slide-left linear forwards;
+		animation-timeline: view();
+		animation-range: entry 50px;
 	}
-}
 
-/* SCROLL ANIMATIONS */
-
-.slide-right {
-	transform: translateX(100px);
-	opacity: 0;
-	animation: slide-right linear forwards;
-	animation-timeline: view();
-	animation-range: entry 50px;
-}
-
-.slide-left {
-	transform: translateX(-100px);
-	opacity: 0;
-	animation: slide-left linear forwards;
-	animation-timeline: view();
-	animation-range: entry 50px;
-}
-
-@keyframes slide-right {
-	to {
-		opacity: 1;
-		transform: translateX(0px);
+	@keyframes slide-right {
+		to {
+			opacity: 1;
+			transform: translateX(0px);
+		}
 	}
-}
 
-@keyframes slide-left {
-	to {
-		opacity: 1;
-		transform: translateX(0px);
+	@keyframes slide-left {
+		to {
+			opacity: 1;
+			transform: translateX(0px);
+		}
 	}
 }

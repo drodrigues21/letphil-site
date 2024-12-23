@@ -55,10 +55,6 @@ html {
 	font-family: "Open Sans", Helvetica, sans-serif;
 }
 
-body {
-	overflow-x: hidden;
-}
-
 .letphil-logo {
 	display: flex;
 	justify-content: center;
@@ -90,4 +86,30 @@ body {
 	position: relative;
 	top: -2px;
 	opacity: 0.8;
+}
+
+.cta-button {
+	font-size: 1.2rem;
+	color: #fff;
+	background: linear-gradient(45deg, #5a62ce 0%, #3f459c 50%, #2d3282 100%);
+	background-size: 200% auto;
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 40px;
+	transition: all 0.5s ease;
+	box-shadow: 0 4px 15px rgba(90, 98, 206, 0.2);
+}
+
+.cta-button:hover {
+	transform: translateY(-2px);
+	background-position: right center;
+	box-shadow: 0 6px 20px rgba(90, 98, 206, 0.3);
+}
+
+/* desktop */
+@media (min-width: 1200px) {
+	html,
+	body {
+		overflow-x: hidden;
+	}
 }

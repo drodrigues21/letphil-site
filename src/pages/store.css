@@ -86,8 +86,10 @@
 }
 
 .cta-button.get-started-btn {
+	display: block;
 	width: 100%;
 	font-weight: 600;
+	text-align: center;
 	cursor: pointer;
 }
 

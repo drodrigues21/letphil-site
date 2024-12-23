@@ -60,18 +60,18 @@ export default function Navbar() {
 					>
 						<li>
 							<a
-								href="#newsletter"
-								onClick={(e) => handleNavClick(e, "newsletter")}
-							>
-								Start Free
-							</a>
-						</li>
-						<li>
-							<a
 								href="#testimonials"
 								onClick={(e) => handleNavClick(e, "testimonials")}
 							>
 								Testimonials
+							</a>
+						</li>
+						<li>
+							<a
+								href="#newsletter"
+								onClick={(e) => handleNavClick(e, "newsletter")}
+							>
+								Newsletter
 							</a>
 						</li>
 					</ul>
@@ -92,27 +92,6 @@ export default function Navbar() {
 						<a
 							className="link glow-effect"
 							href="#newsletter"
-							onClick={(e) => handleNavClick(e, "newsletter")}
-						>
-							Start Free
-							<svg className="glow-effect-svg">
-								<rect
-									pathLength={100}
-									stroke-linecap="round"
-									className="glow-blur"
-								/>
-								<rect
-									pathLength={100}
-									stroke-linecap="round"
-									className="glow-line"
-								/>
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a
-							className="link glow-effect"
-							href="#testimonials"
 							onClick={(e) => handleNavClick(e, "testimonials")}
 						>
 							Testimonials
@@ -132,11 +111,28 @@ export default function Navbar() {
 					</li>
 					<li>
 						<a
-							href="https://discord.gg/SsWF6cWDRw"
-							target="_blank"
-							className="cta-button cta-button-header"
+							className="link glow-effect"
+							href="#testimonials"
+							onClick={(e) => handleNavClick(e, "newsletter")}
 						>
-							Join Us Now
+							Newsletter
+							<svg className="glow-effect-svg">
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-blur"
+								/>
+								<rect
+									pathLength={100}
+									stroke-linecap="round"
+									className="glow-line"
+								/>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="/store" className="cta-button-header">
+							Enroll Now!
 						</a>
 					</li>
 				</ul>

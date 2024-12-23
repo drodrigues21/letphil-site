@@ -94,7 +94,13 @@ const Store = () => {
 								</li>
 							))}
 						</ul>
-						<button className="cta-button get-started-btn">Get Started</button>
+						<a
+							href="https://whop.com/checkout/plan_Vdlz9Ere9lKIL/?d2c=true"
+							className="cta-button get-started-btn"
+							target="_blank"
+						>
+							Get Started
+						</a>
 					</div>
 				))}
 			</div>
