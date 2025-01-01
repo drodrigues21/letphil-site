@@ -62,6 +62,13 @@
 	color: #4e56c5;
 }
 
+.course-card .price span {
+	font-size: 1.5rem;
+	font-weight: 400;
+	text-decoration: line-through;
+	color: #e97777;
+}
+
 .course-card .description {
 	height: 20px;
 	text-align: center;

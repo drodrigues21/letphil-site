@@ -8,6 +8,10 @@
 		"jsx": "react-jsx",
 		"moduleResolution": "node",
 		"target": "esnext",
-		"allowJs": true
+		"allowJs": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		}
 	}
 }

@@ -3,9 +3,9 @@ import coursesImage from "../assets/course.jpeg";
 
 const Courses = () => {
 	return (
-		<section id="courses" class="courses-section">
+		<section id="courses" class="courses-section w-full min-h-[400px] flex items-center justify-center p-4">
 			<h2>Our Course</h2>
-			<div class="course-card-landing-page">
+			<div class="course-card-landing-page bg-white rounded-lg max-w-6xl w-full flex flex-col md:flex-row">
 				<div className="course-img-container">
 					<img
 						src={coursesImage}

@@ -7,25 +7,14 @@ const Store = () => {
 
 	const courseOptions = [
 		{
-			title: "Full Payment",
+			title: "Limited Time Offer - Early Access",
 			price: 499,
-			description: "One-time payment for full course access",
+			description: "One-time payment for full course access when it is released",
 			features: [
 				"Lifetime access",
 				"All course materials",
 				"Community access",
 				"Certificate of completion",
-			],
-		},
-		{
-			title: "Installment Plan",
-			price: 179,
-			description: "3 monthly payments of $179",
-			features: [
-				"Same benefits as full payment",
-				"Flexible payment schedule",
-				"No additional fees",
-				"Start learning immediately",
 			],
 		},
 		{
@@ -84,7 +73,7 @@ const Store = () => {
 				{courseOptions.map((option, index) => (
 					<div key={index} className="course-card">
 						<h2>{option.title}</h2>
-						<p className="price">${option.price}</p>
+						<p className="price"><span>$999</span> ${option.price}</p>
 						<p className="description">{option.description}</p>
 						<ul className="features-list">
 							{option.features.map((feature, i) => (

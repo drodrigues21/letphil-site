@@ -1,4 +1,4 @@
-import { Hero, Newsletter, Carousel, Courses, Features } from "../components";
+import { Hero, Newsletter, Carousel, Courses, Features, Wins } from "../components";
 import "./landing-page.css";
 
 // Component
@@ -8,6 +8,7 @@ export default function LandingPage() {
 			<Hero />
 			<Carousel />
 			<Features />
+			<Wins />
 			<Courses />
 			<Newsletter />
 		</div>
